@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mannu Green | Birth & Postpartum Doula</title>
+  <style>
+    :root {
+      --sage: #8B9D83;
+      --sage-light: #C5CFC0;
+      --sage-dark: #5F7258;
+      --cream: #FAF8F5;
+      --warm-white: #FFFFFF;
+      --text-dark: #2C2C2C;
+      --text-medium: #5A5A5A;
+      --text-light: #8A8A8A;
+      --blush: #E8D5CC;
+      --blush-light: #F5EDE8;
+      --gold: #C4A97D;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      color: var(--text-dark);
+      background-color: var(--cream);
+      line-height: 1.7;
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      border-bottom: 1px solid var(--sage-light);
+    }
+
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+    }
+
+    nav .logo {
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-medium);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--sage-dark);
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      background: linear-gradient(160deg, var(--cream) 0%, var(--blush-light) 50%, var(--cream) 100%);
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero-avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--sage-light);
+      margin: 0 auto 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      border: 4px solid var(--warm-white);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: normal;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .hero .subtitle {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 24px;
+    }
+
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: var(--text-medium);
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 40px;
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--sage);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--sage-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(95,114,88,0.3);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--sage);
+      color: var(--sage-dark);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--sage);
+      color: white;
+    }
+
+    /* ---- SECTIONS ---- */
+    section {
+      padding: 100px 24px;
+    }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: normal;
+      margin-bottom: 32px;
+      color: var(--text-dark);
+    }
+
+    /* ---- ABOUT ---- */
+    .about {
+      background: var(--warm-white);
+    }
+
+    .about p {
+      font-size: 1.05rem;
+      color: var(--text-medium);
+      margin-bottom: 20px;
+    }
+
+    .credentials {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--sage-light);
+      flex-wrap: wrap;
+    }
+
+    .credential {
+      text-align: center;
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .credential .number {
+      font-size: 2.5rem;
+      color: var(--sage-dark);
+      display: block;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .credential .label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* ---- SERVICES ---- */
+    .services {
+      background: var(--cream);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      background: var(--warm-white);
+      padding: 40px 32px;
+      border-radius: 16px;
+      border: 1px solid rgba(139,157,131,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+    }
+
+    .service-card .icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .service-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-card li {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--cream);
+    }
+
+    .service-card li:last-child {
+      border-bottom: none;
+    }
+
+    .service-card li::before {
+      content: "\2022";
+      color: var(--sage);
+      margin-right: 10px;
+    }
+
+    .service-card .price {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--sage-light);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--sage-dark);
+      letter-spacing: 1px;
+    }
+
+    /* ---- TESTIMONIALS ---- */
+    .testimonials {
+      background: var(--sage-dark);
+      color: white;
+    }
+
+    .testimonials .section-label {
+      color: var(--sage-light);
+    }
+
+    .testimonials .section-title {
+      color: white;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 36px 28px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .testimonial-card .stars {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .testimonial-card .author {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--sage-light);
+    }
+
+    /* ---- FAQ ---- */
+    .faq {
+      background: var(--warm-white);
+    }
+
+    .faq-list {
+      margin-top: 48px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--sage-light);
+      padding: 28px 0;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.5rem;
+      color: var(--sage);
+      transition: transform 0.3s;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-item p {
+      margin-top: 16px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-medium);
+      line-height: 1.8;
+    }
+
+    /* ---- CONTACT / CTA ---- */
+    .cta {
+      background: linear-gradient(160deg, var(--blush-light) 0%, var(--cream) 100%);
+      text-align: center;
+    }
+
+    .cta .section-title {
+      font-size: 2.5rem;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      color: var(--text-medium);
+      max-width: 550px;
+      margin: 0 auto 40px;
+    }
+
+    .cta .btn-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-details {
+      margin-top: 48px;
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-medium);
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 4px;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 40px 24px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+
+    footer .social-links {
+      margin-bottom: 16px;
+    }
+
+    footer .social-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    footer .social-links a:hover {
+      color: var(--sage-light);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.2rem; }
+      .section-title { font-size: 1.8rem; }
+      nav ul { gap: 16px; }
+      nav a { font-size: 0.75rem; }
+      .credentials { gap: 24px; }
+      .contact-details { gap: 24px; }
+      section { padding: 72px 20px; }
+    }
+
+    @media (max-width: 480px) {
+      nav ul { display: none; }
+      .hero h1 { font-size: 1.8rem; }
+      .cta .section-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Mannu Green</div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-avatar">
+        <!-- Replace with <img src="your-photo.jpg" alt="Mannu Green" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"> -->
+        <span style="color: var(--sage-dark);">MG</span>
+      </div>
+      <p class="subtitle">Birth &amp; Postpartum Doula</p>
+      <h1>Mannu Green</h1>
+      <p class="tagline">Holding space for your most transformative moments.</p>
+      <a href="mailto:roadrunner085@gmail.com" class="btn btn-primary">Email Me</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <p class="section-label">My Story</p>
+      <h2 class="section-title">Every birth deserves to be supported.</h2>
+      <p>
+        I became a doula after the birth of my second child, when I experienced firsthand the
+        difference compassionate, continuous support can make. That experience changed the
+        trajectory of my life and set me on a path to hold space for other families during one
+        of life's most profound transitions.
+      </p>
+      <p>
+        My approach is rooted in evidence-based care, deep listening, and the belief that every
+        birthing person already has the wisdom they need &mdash; sometimes they just need someone
+        in their corner reminding them of that. Whether you're planning a home birth, a hospital
+        birth, or a cesarean, I'm here to support your choices without judgment.
+      </p>
+      <p>
+        I serve families in the greater Portland, Oregon area and offer virtual support
+        for those further afield.
+      </p>
+
+      <div class="credentials">
+        <div class="credential">
+          <span class="number">3</span>
+          <span class="label">Births Attended</span>
+        </div>
+        <div class="credential">
+          <span class="number">0</span>
+          <span class="label">Years Experience</span>
+        </div>
+        <div class="credential">
+          <span class="number">DONA</span>
+          <span class="label">Certified</span>
+        </div>
+        <div class="credential">
+          <span class="number">CLC</span>
+          <span class="label">Lactation Counselor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="section-inner">
+      <p class="section-label">How I Can Help</p>
+      <h2 class="section-title">Services</h2>
+
+      <div class="services-grid">
+        <!-- Birth Doula -->
+        <div class="service-card">
+          <div class="icon">&#127804;</div>
+          <h3>Birth Doula Support</h3>
+          <ul>
+            <li>Two prenatal visits to build our relationship and discuss your birth preferences</li>
+            <li>On-call support from 37 weeks</li>
+            <li>Continuous labor &amp; delivery support</li>
+            <li>Comfort measures, positioning, and advocacy</li>
+            <li>Partner coaching and support</li>
+            <li>One postpartum follow-up visit</li>
+          </ul>
+        </div>
+
+        <!-- Postpartum -->
+        <div class="service-card">
+          <div class="icon">&#127775;</div>
+          <h3>Postpartum Doula Support</h3>
+          <ul>
+            <li>Daytime or overnight support</li>
+            <li>Newborn care guidance and feeding support</li>
+            <li>Light meal preparation</li>
+            <li>Emotional support and active listening</li>
+            <li>Sibling adjustment assistance</li>
+            <li>Local resource referrals</li>
+          </ul>
+        </div>
+
+        <!-- Prenatal -->
+        <div class="service-card">
+          <div class="icon">&#128218;</div>
+          <h3>Childbirth Education</h3>
+          <ul>
+            <li>Private or small-group classes</li>
+            <li>Evidence-based curriculum</li>
+            <li>Comfort techniques &amp; breathing</li>
+            <li>Understanding interventions</li>
+            <li>Newborn care basics</li>
+            <li>Postpartum planning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section class="cta" id="contact">
+    <div class="section-inner">
+      <p class="section-label">Let's Connect</p>
+      <h2 class="section-title">Ready to feel supported?</h2>
+      <p>
+        I'd love to hear from you. Reach out and let's talk about how I can support
+        you and your family.
+      </p>
+      <a href="mailto:roadrunner085@gmail.com" class="btn btn-primary">Send a Message</a>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <strong>Email</strong>
+          roadrunner085@gmail.com
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social-links">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+    </div>
+    <p>&copy; 2026 Mannu Green Doula Services. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
